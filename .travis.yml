@@ -33,6 +33,6 @@ before_deploy: true
 
 deploy: true
 
-after_dploy: true
+after_deploy: true
 
 after_script: true
