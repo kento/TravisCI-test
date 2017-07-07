@@ -1,0 +1,38 @@
+
+language: C++
+
+sudo: enabled
+dist: trusty
+
+compiler: 
+  - clang
+
+
+# If before_install, install or before_script return a non-zero exit code, the build is errored and stops immediately
+
+before_install: true
+
+install: true
+
+before_script: true
+
+# If script returns a non-zero exit code, the build is failed, but continues to run before being marked as failed.
+
+script: true
+
+# (Optional) for cleaning up cache
+before_cache: true
+
+# The exit code of after_success, after_failure, after_script and subsequent stages do not affect the build result. However, if one of these stages times out, the build is marked as a failure.
+
+after_success: true
+
+after_failure: true
+
+before_deploy: true
+
+deploy: true
+
+after_dploy: true
+
+after_script: true
