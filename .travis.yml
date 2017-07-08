@@ -4,15 +4,32 @@ language: C++
 sudo: enabled
 dist: trusty
 
+notifications:
+  email: false
+
 compiler: 
   - clang
+
+#env:
+#  global:
+#    - MPI=mpich
+#    - F77=gfortran-5
+#    - PATH=/usr/lib/ccache/:$PATH
+#  matrix:
+#    - CC=gcc-5 CXX=g++-5
+#    - CC=clang-3.8 CXX=clang++-3.8
+
+#cache:
+#  directories:
+#    - $HOME/.ccache
 
 
 # If before_install, install or before_script return a non-zero exit code, the build is errored and stops immediately
 
 #before_install: true
 
-install: true
+install: 
+  - ./autogen.sh
 
 #before_script: true
 
