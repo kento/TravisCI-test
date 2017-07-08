@@ -28,8 +28,7 @@ compiler:
 
 #before_install: true
 
-install: 
-  - ./autogen.sh
+install: true
 
 before_script: 
   - ls
@@ -37,6 +36,7 @@ before_script:
 # If script returns a non-zero exit code, the build is failed, but continues to run before being marked as failed.
 
 script: 
+  - ./autogen.sh
   - ./configure 
   - make
 
