@@ -35,7 +35,9 @@ install:
 
 # If script returns a non-zero exit code, the build is failed, but continues to run before being marked as failed.
 
-#script: true
+script: 
+  - ./configure 
+  - make
 
 # (Optional) for cleaning up cache
 #before_cache: true
