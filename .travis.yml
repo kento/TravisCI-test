@@ -31,7 +31,8 @@ compiler:
 install: 
   - ./autogen.sh
 
-#before_script: true
+before_script: 
+  - ls
 
 # If script returns a non-zero exit code, the build is failed, but continues to run before being marked as failed.
 
