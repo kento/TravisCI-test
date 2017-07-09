@@ -41,7 +41,7 @@ addons:
     notification_email: kento.s.account@gmail.com
     build_command_prepend: "./autogen.sh && ./configure && make clean"
     build_command: "make"
-    branch_pattern: covertiy_scan
+    branch_pattern: coverity_scan
 
 # If before_install, install or before_script return a non-zero exit code, the build is errored and stops immediately
 before_install:
