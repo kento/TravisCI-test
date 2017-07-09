@@ -41,7 +41,7 @@ ddons:
 install:
   - echo `which $CC`
   - echo `which $CXX`
-  - sh travis/install-mpi.sh $MPI
+  - sh travis-test/install-mpi.sh $MPI
 
 #before_script: 
 
