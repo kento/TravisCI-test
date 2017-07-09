@@ -52,6 +52,7 @@ script:
   - ./autogen.sh
   - ./configure 
   - make
+  - sh travis-test/test.sh
 
 # (Optional) for cleaning up cache
 #before_cache: true
