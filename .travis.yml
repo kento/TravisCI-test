@@ -34,14 +34,14 @@ addons:
     - gdb
     - valgrind
     - make
-#  coverity_scan:
-#    project:
-#      name: "kento/TravisCI-test"
-#      description: "Build submitted via Travis CI"
-#    notification_email: kento@llnl.gov
-#    build_command_prepend: "./autogen.sh; ./configure; make clean"
-#    build_command:   "make"
-#    branch_pattern: coverity_scan
+  coverity_scal:
+    project:
+      name: "kento/TravisCI-test"
+      description: "Build submitted via Travis CI"
+    notification_email: kento.s.account@gmail.com
+    build_command_prepend: "./autogen.sh && ./configure && make clean"
+    build_command: "make"
+    branch_pattern: covertiy_scan
 
 # If before_install, install or before_script return a non-zero exit code, the build is errored and stops immediately
 #before_install:
