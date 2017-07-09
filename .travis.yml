@@ -33,6 +33,7 @@ addons:
       - apport  # for coredumps
       - gdb
       - valgrind
+      - make
 
 # If before_install, install or before_script return a non-zero exit code, the build is errored and stops immediately
 
