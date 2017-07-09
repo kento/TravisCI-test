@@ -10,25 +10,38 @@ notifications:
 compiler: 
   - clang
 
-#env:
-#  global:
-#    - MPI=mpich
-#    - F77=gfortran-5
-#    - PATH=/usr/lib/ccache/:$PATH
-#  matrix:
-#    - CC=gcc-5 CXX=g++-5
-#    - CC=clang-3.8 CXX=clang++-3.8
+env:
+  global:
+    - MPI=mpich
+    - F77=gfortran
+    - PATH=/usr/lib/ccache/:$PATH
+  matrix:
+    - CC=clang CXX=clang++
+#    - CC=gcc CXX=g++
 
-#cache:
-#  directories:
-#    - $HOME/.ccache
 
+cache:
+  directories:
+    - $HOME/.ccache
+
+ddons:
+    packages:
+      - clang-4.0
+      - gcc-4.9
+      - g++-4.9
+      - ccache
+      - apport  # for coredumps
+      - gdb
+      - valgrind
 
 # If before_install, install or before_script return a non-zero exit code, the build is errored and stops immediately
 
 #before_install: true
 
-install: true
+install:
+  - echo `which $CC`
+  - echo `which $CXX`
+  - sh travis/install-mpi.sh $MPI
 
 #before_script: 
 
@@ -47,7 +60,7 @@ script:
 #after_success: true
 
 after_failure:
- - cat config.log 
+  - cat config.log
 
 #before_deploy: true
 
