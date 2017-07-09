@@ -44,8 +44,8 @@ addons:
     branch_pattern: covertiy_scan
 
 # If before_install, install or before_script return a non-zero exit code, the build is errored and stops immediately
-#before_install:
-#      - echo -n | openssl s_client -connect scan.coverity.com:443 | sed -ne '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p' | sudo tee -a /etc/ssl/certs/ca-
+before_install:
+      - echo -n | openssl s_client -connect scan.coverity.com:443 | sed -ne '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p' | sudo tee -a /etc/ssl/certs/ca-
 
 install:
   - echo `which $CC`
