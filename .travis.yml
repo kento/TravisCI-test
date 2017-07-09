@@ -15,6 +15,9 @@ env:
     - MPI=mpich
     - F77=gfortran
     - PATH=/usr/lib/ccache/:$PATH
+    # The next declaration is the encrypted COVERITY_SCAN_TOKEN, created
+    #   via the "travis encrypt" command using the project repo's public key
+    - secure: "KWSdDVwbf7CUuhGqxmt5nJqsFjBGMm60/zkRt1KX5onUnH5JodyrEf3yRHPaPf/Z5he7BmB9KTAVoskq9b4vSTMs5bPVYXVqG9F5+83O2gu26N3n7hcJWqtiv3HzjlxpDyzXVEzSvZNlW98Tis8GWpIxhJo0hCPcETcQYL/VwkbvBiq9X28CuNTE1TMZe+QSHdBKmZ8OL/sCAvAVyyd34UuoV2xLlTV0/I9Ke5ahHFqTmAKCfp8BjWT3a+Ckpi38HQ+wk9FSLHAmFdIlfcbAiFAxGIH48Fu3HDWv/4Y6YD2LOlTQ6W0JT53W1DN6FoNxeNVS1Xql/nK+w1zjIfHseHCjU9b14Tp1z4r97fqkn7RSDfJG0a02jEI0n7EMwRfB6hmJOOp7OMVufOEnmZhvl005VseWqAoK7RNkMkPM3UoS3GD4W5vdlzwzilEHTSgC0TwOaVD7+J57rnlU7bi8tMmWUPS8epuLsjCpY7QBnvdoYngnSkgDP0HH93IH+l4fmf1UyBAL2UpkZlf3rbR8LRvasQ0g4LTpd7XBiHIexuLgeSHnFgwIyn5+5Vz6vTQ8WgUOBtyU/e/TTzE9u3xXEVq/xfIFAP2hRKvdnhODwWWImAcZh0YVsZ/eoj9KPABuS/UrKjtKqjiUGIgK2kIFevPiot1jcaXM6r+/LCrPM8A="
   matrix:
     - CC=clang CXX=clang++
 #    - CC=gcc CXX=g++
@@ -34,10 +37,18 @@ addons:
       - gdb
       - valgrind
       - make
+  coverity_scan:
+    project:
+      name: "kento/TravisCI-test"
+      description: "Build submitted via Travis CI"
+    notification_email: kento@llnl.gov
+    build_command_prepend: "./configure; make clean"
+    build_command:   "make -j 4"
+    branch_pattern: coverity_scan
 
 # If before_install, install or before_script return a non-zero exit code, the build is errored and stops immediately
-
-#before_install: true
+before_install:
+      - echo -n | openssl s_client -connect scan.coverity.com:443 | sed -ne '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p' | sudo tee -a /etc/ssl/certs/ca-
 
 install:
   - echo `which $CC`
