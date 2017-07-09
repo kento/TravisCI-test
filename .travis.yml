@@ -1,4 +1,3 @@
-
 language: C++
 
 sudo: enabled
@@ -20,8 +19,6 @@ env:
     - secure: "KWSdDVwbf7CUuhGqxmt5nJqsFjBGMm60/zkRt1KX5onUnH5JodyrEf3yRHPaPf/Z5he7BmB9KTAVoskq9b4vSTMs5bPVYXVqG9F5+83O2gu26N3n7hcJWqtiv3HzjlxpDyzXVEzSvZNlW98Tis8GWpIxhJo0hCPcETcQYL/VwkbvBiq9X28CuNTE1TMZe+QSHdBKmZ8OL/sCAvAVyyd34UuoV2xLlTV0/I9Ke5ahHFqTmAKCfp8BjWT3a+Ckpi38HQ+wk9FSLHAmFdIlfcbAiFAxGIH48Fu3HDWv/4Y6YD2LOlTQ6W0JT53W1DN6FoNxeNVS1Xql/nK+w1zjIfHseHCjU9b14Tp1z4r97fqkn7RSDfJG0a02jEI0n7EMwRfB6hmJOOp7OMVufOEnmZhvl005VseWqAoK7RNkMkPM3UoS3GD4W5vdlzwzilEHTSgC0TwOaVD7+J57rnlU7bi8tMmWUPS8epuLsjCpY7QBnvdoYngnSkgDP0HH93IH+l4fmf1UyBAL2UpkZlf3rbR8LRvasQ0g4LTpd7XBiHIexuLgeSHnFgwIyn5+5Vz6vTQ8WgUOBtyU/e/TTzE9u3xXEVq/xfIFAP2hRKvdnhODwWWImAcZh0YVsZ/eoj9KPABuS/UrKjtKqjiUGIgK2kIFevPiot1jcaXM6r+/LCrPM8A="
   matrix:
     - CC=clang CXX=clang++
-#    - CC=gcc CXX=g++
-
 
 cache:
   directories:
