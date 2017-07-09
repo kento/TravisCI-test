@@ -1,7 +1,7 @@
 AM_CFLAGS = -fPIC -g -Wall -std=c++0x -pthread -I$(libz_a_INCLUDE) 
 AM_CXXFLAGS = $(AM_CFLAGS)
 
-apio_SOURCES =  \
+pmpi_SOURCES =  \
 		pmpi.cpp
 
 lib_LTLIBRARIES = libpmpi.la
