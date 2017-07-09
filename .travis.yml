@@ -24,7 +24,7 @@ cache:
   directories:
     - $HOME/.ccache
 
-ddons:
+addons:
     packages:
       - clang-4.0
       - gcc-4.9
