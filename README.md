@@ -4,8 +4,7 @@
        src="https://scan.coverity.com/projects/13118/badge.svg"/>
 </a>
 # TravisCI-test
-
-
 * Test items
-** C++
-** MPI
+  * C++
+  * MPI/PMPI
+  * Coverity scan
